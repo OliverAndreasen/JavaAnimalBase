@@ -75,6 +75,7 @@ public class UserInterface {
                 Sort the list of animals by
                 n) Name
                 t) Type
+                d) Description
                 a) Age
                 """);
         Scanner input = new Scanner(System.in);
@@ -90,6 +91,8 @@ public class UserInterface {
             application.sortBy("type");
         } else if(ch == 'a') {
             application.sortBy("age");
+        } else if(ch =='d'){
+            application.sortBy("desc");
         }
 
         // When sorted, show the list again

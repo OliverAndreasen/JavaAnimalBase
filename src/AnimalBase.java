@@ -12,9 +12,9 @@ public class AnimalBase {
 
     public void start() {
         UserInterface ui = new UserInterface(this);
-        createNewAnimal("Gurli", "small", "ape", 9);
-        createNewAnimal("Anders", "small", "elephant", 10);
-        createNewAnimal("Per", "small", "tiger", 69);
+        createNewAnimal("Gurli", "small", "AAA", 94);
+        createNewAnimal("Anders", "small", "XXX", 1);
+        createNewAnimal("Per", "small", "DDD", 69);
         ui.start();
     }
 
@@ -29,7 +29,15 @@ public class AnimalBase {
 
     public void sortBy(String sort) {
         // TODO: Implement sorting!
-        Collections.sort(animals);
+        if(sort == "name") {
+            Collections.sort(animals, new NameComperator());
+        }else if(sort == "desc") {
+            Collections.sort(animals, new DescComperator());
+        } else if(sort == "type") {
+            Collections.sort(animals, new TypeComperator());
+        } else if(sort == "age") {
+            Collections.sort(animals, new AgeComperator());
+        }
         System.out.println("TODO: Sort the list of animals by: " + sort);
     }
 
